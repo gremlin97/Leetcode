@@ -8,17 +8,15 @@ class Solution:
             if num[i] == 'I':
                 res += hashMap['I']
                 i -= 1
-                print('a')
                 continue
                 
             if num[i-1] + num[i] in hashMap:
                 res += hashMap[num[i-1] + num[i]]
                 i -= 2
-                print('b')
+                
             else:
                 res += hashMap[num[i]]
                 i -=1
-                print('c')
         
         if i == 0:
             res += hashMap[num[i]]
