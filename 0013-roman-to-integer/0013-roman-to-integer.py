@@ -12,8 +12,7 @@ class Solution:
                 
             if num[i-1] + num[i] in hashMap:
                 res += hashMap[num[i-1] + num[i]]
-                i -= 2
-                
+                i -= 2 
             else:
                 res += hashMap[num[i]]
                 i -=1
