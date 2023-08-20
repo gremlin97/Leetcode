@@ -10,7 +10,6 @@ class Solution:
         hashmap = {}
         
         for p, w in zip(pattern, s):
-            print(p,w)
             if w in hashmap.values() and p not in hashmap.keys():
                 return False
             elif w in hashmap.values() and hashmap[p]!= w:
