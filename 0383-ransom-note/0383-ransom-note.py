@@ -5,8 +5,6 @@ class Solution:
         c1 = dict(Counter(ransomNote))
         c2 = dict(Counter(magazine))
         
-        print(c1, c2)
-        
         for x in ransomNote:
             if x not in c2:
                 return False
