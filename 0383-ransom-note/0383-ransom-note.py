@@ -17,8 +17,6 @@ class Solution:
                 hashmap2[x] += 1
             else:
                 hashmap2[x] = 1
-        
-        print(hashmap1, hashmap2)
 
         for x in ransomNote:
             if x not in hashmap1:
@@ -27,7 +25,6 @@ class Solution:
                 if hashmap1[x] < hashmap2[x]:
                     return False
                 
-        
         return True
         
         
