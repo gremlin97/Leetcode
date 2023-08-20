@@ -1,31 +1,21 @@
+from collections import Counter
+
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        hashmap1 = {}
-        hashmap2 = {}
+        c1 = dict(Counter(ransomNote))
+        c2 = dict(Counter(magazine))
         
-        ransomNote = list(ransomNote)
-        magazine = list(magazine)
-        
-        for x in magazine:
-            if x in hashmap1:
-                hashmap1[x] += 1
-            else:
-                hashmap1[x] = 1
+        print(c1, c2)
         
         for x in ransomNote:
-            if x in hashmap2:
-                hashmap2[x] += 1
-            else:
-                hashmap2[x] = 1
-
-        for x in ransomNote:
-            if x not in hashmap1:
+            if x not in c2:
                 return False
-            if x in hashmap1:
-                if hashmap1[x] < hashmap2[x]:
+            if x in c2:
+                if c2[x] < c1[x]:
                     return False
-                
+        
         return True
+        
         
         
         
