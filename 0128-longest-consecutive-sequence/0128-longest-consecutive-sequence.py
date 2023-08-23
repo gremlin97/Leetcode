@@ -6,9 +6,8 @@ class Solution:
         maxseq = 1 
         res = 1
         nums = sorted(nums)
-        print(nums)
+        
         for i in range(1, len(nums)):
-            print('Res:',res)
             print(nums[i],nums[i-1])
             if nums[i] == nums[i-1]:
                 continue
@@ -16,7 +15,6 @@ class Solution:
                 res += 1
             else:
                 if res > maxseq:
-                    print('Yes')
                     maxseq = res
                     res = 1
                 else:
@@ -24,7 +22,6 @@ class Solution:
         
         if res > maxseq:
             maxseq = res
-        
         
         return maxseq
                 
