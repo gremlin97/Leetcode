@@ -8,7 +8,6 @@ class Solution:
         nums = sorted(nums)
         
         for i in range(1, len(nums)):
-            print(nums[i],nums[i-1])
             if nums[i] == nums[i-1]:
                 continue
             if nums[i] == nums[i-1] + 1:
