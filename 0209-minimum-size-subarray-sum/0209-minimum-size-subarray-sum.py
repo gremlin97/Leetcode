@@ -8,8 +8,6 @@ class Solution:
             print(l,r)
             total += nums[r]
             while total >= target:
-                print("Index",r,l)
-                print("Res",r - l + 1)
                 res = min(r - l + 1 , res)  
                 total -= nums[l]
                 l += 1
