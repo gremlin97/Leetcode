@@ -6,8 +6,6 @@ class Solution:
                 hashmap[x] = 1
             else:
                 hashmap[x]+=1
-        
-        print(arr, set(list(hashmap.values())))
             
         if len(hashmap.values()) == len(set(list(hashmap.values()))):
             return True
