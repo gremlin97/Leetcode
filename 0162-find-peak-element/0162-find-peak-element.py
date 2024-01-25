@@ -5,7 +5,6 @@ class Solution:
             
         for i in range(0, len(nums)):
             if i>0 and i<len(nums)-1:
-                print(i)
                 if (nums[i] > nums[i-1] and nums[i] > nums[i+1]):
                     return i
             elif i==0:
