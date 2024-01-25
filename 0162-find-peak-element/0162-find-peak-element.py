@@ -1,18 +1,21 @@
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
-        if len(nums) == 1:
-            return 0
-            
-        for i in range(0, len(nums)):
-            if i>0 and i<len(nums)-1:
-                if (nums[i] > nums[i-1] and nums[i] > nums[i+1]):
-                    return i
-            elif i==0:
-                if nums[i]>nums[i+1]:
-                    return 0
+        l = 0
+        r = len(nums) - 1
+        
+        while(l<=r):
+            mid = l + (r-l)//2
+            if mid<len(nums)-1 and nums[mid]<nums[mid+1]:
+                l = mid + 1
+            elif mid>0 and nums[mid]<nums[mid-1]:
+                r = mid - 1
             else:
-                if nums[i]>nums[i-1]:
-                    return len(nums)-1
+                return mid
+            
+                
+        
+                
+                
                 
                 
         
