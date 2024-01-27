@@ -3,21 +3,17 @@ class Solution:
         if len(strs) == 1:
             return strs[0]
         
-        res = ''
+        res, flag = '', False
         strs = sorted(strs)
-        flag = False
         
         for i in range(0, len(strs[0])):
             base = strs[0][i]
             for j in range(0, len(strs)):
-                print(base, strs[j][i])
                 if strs[j][i] != base:
                     flag = True
                     return res
-            print(res)
             res += strs[0][i]
             
-        
         if flag:
             return ''
         else:
