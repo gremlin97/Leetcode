@@ -29,7 +29,7 @@ class Solution:
                 s += trav[i]
                 
             if high == trav[i]:
-                f = False
+                break
                 
         
         return s
