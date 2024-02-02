@@ -19,7 +19,7 @@ class Solution:
         inorder(root)
         
         print(trav, set(trav))
-        if len(trav)!= len(set(trav)):
+        if trav!= sorted(list(set(trav))):
             return False
         return trav == sorted(trav)
         
