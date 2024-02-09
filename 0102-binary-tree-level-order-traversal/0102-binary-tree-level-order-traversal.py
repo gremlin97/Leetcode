@@ -14,7 +14,7 @@ class Solution:
             return 
         while(q):
             temp = []
-            for i in range(0, len(q)):
+            for _ in range(0, len(q)):
                 r = q.pop(0)
                 temp.append(r.val)
 
