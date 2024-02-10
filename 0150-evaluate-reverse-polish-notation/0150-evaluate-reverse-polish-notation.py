@@ -9,7 +9,6 @@ class Solution:
             if x in ops:
                 r = stack.pop()
                 l = stack.pop()
-                print(l, r)
                 
                 if x=='+':
                     exp = int(l)+int(r)
@@ -25,8 +24,7 @@ class Solution:
                     stack.append(exp)
             else:
                 stack.append(x)
-            
-        print(stack)
+
         return int(stack[-1])
                     
             
