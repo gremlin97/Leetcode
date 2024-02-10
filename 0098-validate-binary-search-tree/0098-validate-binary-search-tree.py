@@ -18,7 +18,7 @@ class Solution:
             
         inorder(root)
         
-        if len(trav)!= len(set(trav)):
+        if len(trav) != len(set(trav)):
             return False
         return trav == sorted(trav)
         
