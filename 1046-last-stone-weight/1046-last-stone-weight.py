@@ -10,8 +10,6 @@ class Solution:
             l1 = heapq.heappop(_stones)
             l2 = heapq.heappop(_stones)
             
-            print(l1,l2,l1-l2)
-            
             if l1==l2:
                 continue
             else:
