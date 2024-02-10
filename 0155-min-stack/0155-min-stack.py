@@ -6,7 +6,6 @@ class MinStack:
         self.l = 0
         self.min = float('inf')
         
-
     def push(self, val: int) -> None:
         self.stack.append(val)
         self.l = len(self.stack)
@@ -31,7 +30,7 @@ class MinStack:
     def getMin(self) -> int:
         return self.min
         
-        
+
 # Your MinStack object will be instantiated and called as such:
 # obj = MinStack()
 # obj.push(val)
