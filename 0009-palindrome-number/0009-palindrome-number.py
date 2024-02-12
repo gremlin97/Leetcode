@@ -11,5 +11,4 @@ class Solution:
             e = stack.pop()
             rev.append(e)
             
-        print(rev, a)
         return rev == a
