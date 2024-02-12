@@ -1,17 +1,15 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        x = list(str(x))
-        l = 0
-        r = len(x) - 1 
+        stack = []
+        rev = []
+        a = list(str(x))
         
-        f = True
+        for v in a:
+            stack.append(v)
         
-        while l<r:
-            if x[l] != x[r]:
-                f = False
-                break
-            l+=1
-            r-=1
+        for v in a:
+            e = stack.pop()
+            rev.append(e)
             
-        return f
-            
+        print(rev, a)
+        return rev == a
