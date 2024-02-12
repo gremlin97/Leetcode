@@ -10,8 +10,6 @@ class Solution:
                 order[si] = v
             stack.append([i,v])
         
-        print(order, stack)
-        
         for x in nums1:
             res.append(order[nums2.index(x)])
         
