@@ -5,7 +5,7 @@ class Solution:
         def floodFillUtil(r, c, fillcolor):
             if r>(len(image)-1) or c>(len(image[0])-1) or r<0 or c<0 or image[r][c] == color or image[r][c] != fillcolor:
                 return
-            print(r,c)
+            
             image[r][c] = color
             directions = [[1,0],[-1,0],[0,-1],[0,1]]
             
