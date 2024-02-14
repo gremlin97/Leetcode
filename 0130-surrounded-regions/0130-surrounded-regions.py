@@ -21,22 +21,12 @@ class Solution:
                     board[r][c] = "-"
         
         for x in range(len(board[0])):
-            print(0,x)
             fill(0,x)
-        
-        for x in range(len(board[0])):
-            print(len(board)-1,x)
             fill(len(board)-1,x)
-            
+                  
         for x in range(1, len(board)-1):
-            print(x,0)
             fill(x,0)
-        
-        for x in range(1,len(board)-1):
-            print(x,len(board)-1)
             fill(x,len(board[0])-1)
-        
-        print(board)
         
         for r in range(len(board)):
             for c in range(len(board[0])):
