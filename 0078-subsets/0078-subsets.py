@@ -4,8 +4,9 @@ class Solution:
         subsets = []
         
         def dfs(i):
-            if i>len(nums): #exit condition
-                return 
+            # if i>len(nums): #exit condition
+            #     print(check)
+            #     return 
             
             if i == len(nums):
                 res.append(subsets.copy())
