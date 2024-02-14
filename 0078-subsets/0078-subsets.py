@@ -4,14 +4,14 @@ class Solution:
         subsets = []
         
         def dfs(i):
-            if i>len(nums):
-                return
+            if i>len(nums): #exit condition
+                return 
             
             if i == len(nums):
                 res.append(subsets.copy())
                 return
             
-            subsets.append(nums[i])
+            subsets.append(nums[i]) #ADD
             dfs(i+1)
             
             subsets.pop()
