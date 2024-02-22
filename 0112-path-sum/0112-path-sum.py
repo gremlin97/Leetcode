@@ -21,6 +21,6 @@ class Solution:
             return False
         
         
-        return (r.left and self.psum(r.left, targetSum) or (r.right and self.psum(r.right, targetSum)))
+        return (self.psum(r.left, targetSum) or (self.psum(r.right, targetSum)))
             
         
