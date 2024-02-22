@@ -14,13 +14,9 @@ class Solution:
         
         targetSum -= r.val
         
-        if (targetSum == 0) and (not r.left and not r.right):
-            return True
-        
-        if (targetSum != 0) and (not r.left and not r.right):
-            return False
-        
-        
+        if not r.left and not r.right:
+            return targetSum == 0
+ 
         return (self.psum(r.left, targetSum) or (self.psum(r.right, targetSum)))
             
         
