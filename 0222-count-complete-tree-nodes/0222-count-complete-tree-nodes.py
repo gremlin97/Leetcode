@@ -13,10 +13,8 @@ class Solution:
         q.append(root)
         trav = []
         while q:
-            temp = []
             for _ in range(len(q)):
                 v = q.pop(0)
-                print(v.val)
                 trav.append(v.val)
                 if v.left:
                     q.append(v.left)
