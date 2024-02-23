@@ -11,7 +11,7 @@ class Solution:
         res = []
         
         if not root:
-            return 
+            return []
         while(q):
             temp = []
             for _ in range(0, len(q)):
