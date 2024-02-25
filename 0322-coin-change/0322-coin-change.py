@@ -2,6 +2,7 @@ class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int: 
         memo = [-1] * (amount + 1)
         
+        @lru_cache
         def dfs(t):
             
             if memo[t]>=0:
