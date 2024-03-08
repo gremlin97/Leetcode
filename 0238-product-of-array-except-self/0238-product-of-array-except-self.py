@@ -2,6 +2,7 @@ class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         left = []
         right = []
+        res = []
         
         p = 1
         for i in range(len(nums)):
@@ -14,9 +15,7 @@ class Solution:
             right.append(p)
         right.reverse()
         
-        print(left, right)
         
-        res = []
         res.append(right[1])
         for i in range(1,len(nums)-1):
             res.append(left[i-1]*right[i+1])
