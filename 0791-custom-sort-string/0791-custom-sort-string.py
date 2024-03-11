@@ -6,7 +6,6 @@ class Solution:
         common_set = list(set(order).intersection(set(s)))
         common_list = [x for x in order if x in common_set]
         other = list(set([x for x in list(s) if x not in common_set]))
-        other.sort()
         union = common_list + other
         
         res = ''
