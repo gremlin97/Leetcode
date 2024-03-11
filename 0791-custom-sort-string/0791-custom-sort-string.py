@@ -12,8 +12,6 @@ class Solution:
         other = list(set([x for x in list(s) if x not in common_set]))
         other.sort()
         union = common_list + other
-        print(d)
-        print(union, common_list, other)
         
         res = ''
         for x in union:
