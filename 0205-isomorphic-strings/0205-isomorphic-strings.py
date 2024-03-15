@@ -16,7 +16,6 @@ class Solution:
             else:
                 e[t[i]].append(i)
         
-        print(list(e.values()), list(d.values()))
         if list(e.values()) == list(d.values()):
             return True
         return False
