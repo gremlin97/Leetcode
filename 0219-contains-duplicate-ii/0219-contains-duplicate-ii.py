@@ -3,7 +3,6 @@ class Solution:
         d = {}
         for i in range(len(nums)):
             if (nums[i] in d):
-                print(i, d[nums[i]])
                 if abs(i - d[nums[i]]) <= k:
                     return True
                 d[nums[i]] = i
