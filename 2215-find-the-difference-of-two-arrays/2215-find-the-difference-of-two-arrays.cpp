@@ -27,16 +27,5 @@ public:
         }       
                
         return {{arr1},{arr2}};
-               
-               
-        
-        
-        // for(auto x:s){
-        //     cout<<x<<endl;
-        // }
-        
-        
-        
-        
     }
 };
