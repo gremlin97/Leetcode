@@ -18,8 +18,7 @@ class Solution:
             fast = fast.next
             prev = curr
             curr = curr.next
-        
-        print(prev.val, curr.val)
+
         prev.next = curr.next
         return head
         
