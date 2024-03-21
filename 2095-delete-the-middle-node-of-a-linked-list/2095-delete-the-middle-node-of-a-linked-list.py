@@ -8,22 +8,22 @@ class Solution:
         if head.next == None:
             return None
         
+        fast = head
         curr = head
-        n = 0
-        while(curr != None):
-            curr = curr.next
-            n+=1
-
-        curr = head
-        i = 0 
-        while(i != n//2):
-            i+=1
+        
+        while(fast != None):
+            if fast.next == None:
+                break
+            fast = fast.next
+            fast = fast.next
             prev = curr
             curr = curr.next
         
-        curr = curr.next
-        prev.next = curr
+        print(prev.val, curr.val)
+        prev.next = curr.next
         return head
+        
+        
             
         
             
