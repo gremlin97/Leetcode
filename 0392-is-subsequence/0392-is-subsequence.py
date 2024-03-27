@@ -9,7 +9,6 @@ class Solution:
             else:
                 r+=1
                 
-        print(l, len(s))
         if l == (len(s)):
             return True
         return False
