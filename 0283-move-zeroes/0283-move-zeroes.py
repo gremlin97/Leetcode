@@ -4,10 +4,17 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         
-        for i in range(len(nums)):
-            if nums[i] == 0:
-                nums.append(nums[i])
-                nums.remove(nums[i])
-                i+=1
+        slow = 0
+        for fast in range(len(nums)):
+            if nums[fast] != 0 and nums[slow] == 0:
+                t = nums[fast]
+                nums[fast] = nums[slow]
+                nums[slow] = t
+            if nums[slow] != 0:
+                slow += 1
         
+            
+                
+                
+                
         
