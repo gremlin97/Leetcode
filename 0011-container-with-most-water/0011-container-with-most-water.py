@@ -6,7 +6,6 @@ class Solution:
         
         while(l<r):
             maxarea = max(maxarea, (r-l)*min(height[l], height[r]))
-            # print(maxarea)
             if(height[l]>height[r]):
                 r-=1
             else:
