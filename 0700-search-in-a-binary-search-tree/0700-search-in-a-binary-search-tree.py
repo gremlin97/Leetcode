@@ -10,18 +10,14 @@ class Solution:
 
         def search(r, v):
             if r is None:
-                return
+                return None
             elif r.val == v:
-                res.append(r)
+                return r
             elif v<r.val:
-                search(r.left, v)
+                return search(r.left, v)
             else:
-                search(r.right, v)
+                return search(r.right, v)
         
-        search(root, val)
-        
-        if res == []:
-            return None
-        return res[0]
+        return search(root, val)
         
             
