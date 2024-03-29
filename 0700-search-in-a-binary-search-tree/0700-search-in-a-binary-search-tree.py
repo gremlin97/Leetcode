@@ -19,6 +19,7 @@ class Solution:
                 search(r.right, v)
         
         search(root, val)
+        
         if res == []:
             return None
         return res[0]
