@@ -5,10 +5,10 @@ class Solution:
         max_s = s = sum(nums[l:r+1])
         
         while(r < (len(nums)) - 1):
-            max_s = max(s, max_s)
             s = s + nums[r+1] - nums[l]
+            max_s = max(s, max_s)
             l += 1
             r += 1
         
-        max_s = max(s, max_s)
+        # max_s = max(s, max_s)
         return max_s/k
