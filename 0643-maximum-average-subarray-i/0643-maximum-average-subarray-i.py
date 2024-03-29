@@ -9,6 +9,5 @@ class Solution:
             max_s = max(s, max_s)
             l += 1
             r += 1
-        
-        # max_s = max(s, max_s)
+    
         return max_s/k
