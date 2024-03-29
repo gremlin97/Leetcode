@@ -14,13 +14,13 @@ class Solution:
             twin_list.append(last.val)
             last = last.next
         
-        i = 0
-        twin_list.reverse()
+        i = len(twin_list) - 1
+        # twin_list.reverse()
         
         while first is not None:
             twin_sum = max(twin_sum, (first.val + twin_list[i]))
             first = first.next
-            i += 1
+            i -= 1
         
         return twin_sum
         
