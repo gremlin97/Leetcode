@@ -7,10 +7,8 @@ class Solution:
         while(r < (len(nums)) - 1):
             max_s = max(s, max_s)
             s = s + nums[r+1] - nums[l]
-            print(s)
             l += 1
             r += 1
         
         max_s = max(s, max_s)
-        print(nums[l:r+1], max_s)
         return max_s/k
