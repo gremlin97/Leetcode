@@ -16,10 +16,8 @@ class Solution:
         
         i = 0
         twin_list.reverse()
-        print(twin_list)
         
         while first is not None:
-            print(first.val, twin_list[i])
             twin_sum = max(twin_sum, (first.val + twin_list[i]))
             first = first.next
             i += 1
