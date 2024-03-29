@@ -23,7 +23,6 @@ class Solution:
             even_p.next = even
         
         odd.next = even_head
-        print(head)
         return head
         
             
