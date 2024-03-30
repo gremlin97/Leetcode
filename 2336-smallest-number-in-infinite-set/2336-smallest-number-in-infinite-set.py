@@ -13,7 +13,7 @@ class SmallestInfiniteSet:
         return small
         
     def addBack(self, num: int) -> None:
-        if num not in self.heap:
+        if num not in self.heap_set:
             heapq.heappush(self.heap, num)
             self.heap_set.add(num)
 
