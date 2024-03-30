@@ -7,9 +7,9 @@ class SmallestInfiniteSet:
         heapq.heapify(self.heap)
 
     def popSmallest(self) -> int:
-        if len(self.heap) > 0:
-            small =  heapq.heappop(self.heap)
-            return small
+        # if len(self.heap) > 0:
+        small =  heapq.heappop(self.heap)
+        return small
         
     def addBack(self, num: int) -> None:
         if num not in self.heap:
