@@ -8,7 +8,6 @@ class RecentCounter:
     def ping(self, t: int) -> int:
         self.requests.append(t)
         self.range = [t-3000, t]
-        # print(self.requests)
         
         i = 0
         while(i<len(self.requests)):
@@ -16,8 +15,7 @@ class RecentCounter:
                 self.requests.pop(0)
                 i -= 1
             i+=1
-        
-        # print(len(self.requests))
+
         return len(self.requests)
 
 # Your RecentCounter object will be instantiated and called as such:
