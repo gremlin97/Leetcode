@@ -4,7 +4,6 @@ class Solution:
         l = 0
         r = l + k - 1
         max_vow = curr_vow = len([x for x in s[l:r+1] if x in vowels])
-        print(curr_vow)
         
         while(r < len(s)-1):
             l+=1
