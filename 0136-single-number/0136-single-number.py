@@ -3,7 +3,7 @@ class Solution:
         res = 0
         
         for x in nums:
-            res = res ^ x
+            res ^= x
         
         return res
         
