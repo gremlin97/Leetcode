@@ -5,7 +5,6 @@ class Solution:
                 r[v] = ['v']
             for i in range(len(r[v])):
                 key = r[v][i]
-                print(key)
                 if key != 'v':
                     r[v][i] = 'v'
                     dfs(r, key)
