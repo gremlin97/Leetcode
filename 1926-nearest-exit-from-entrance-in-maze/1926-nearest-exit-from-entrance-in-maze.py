@@ -12,7 +12,6 @@ class Solution:
                 cell = q.pop(0)
                 
                 if maze[cell[0]][cell[1]] == '.' and ((cell[0] == (len(maze) - 1) or cell[0] == 0) or (cell[1] == len(maze[0]) - 1 or cell[1] == 0)) and (cell[0],cell[1]) != (entrance[0], entrance[1]):
-                    print('Here',cell[0],cell[1])
                     return level
                 
                 for x in d:
