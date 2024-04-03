@@ -19,7 +19,6 @@ class Solution:
                         if grid[new_x][new_y] == 1:
                             grid[new_x][new_y] = 2
                             q.append([new_x,new_y])
-            print(grid)
             m += 1
             
         if 1 not in sum(grid,[]):
