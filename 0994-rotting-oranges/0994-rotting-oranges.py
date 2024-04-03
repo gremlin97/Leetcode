@@ -2,7 +2,7 @@ class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         q = []
         directions = [[0,1],[0,-1],[1,0],[-1,0]]
-        m = -1
+        m = 0
         
         for i in range(len(grid)):
             for j in range(len(grid[0])):
@@ -19,10 +19,11 @@ class Solution:
                         if grid[new_x][new_y] == 1:
                             grid[new_x][new_y] = 2
                             q.append([new_x,new_y])
+            print(grid)
             m += 1
             
         if 1 not in sum(grid,[]):
-            return max(0,m)
+            return max(0,m-1)
         else:
             return -1
             
