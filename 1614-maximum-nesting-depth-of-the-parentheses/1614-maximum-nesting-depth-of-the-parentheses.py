@@ -1,16 +1,9 @@
 class Solution:
-    def maxDepth(self, s: str) -> int:
-        # if s == '':
-        #     return 0
-        
-        # if len(s) == 1:
-        #     return 0
-        
+    def maxDepth(self, s: str) -> int: 
         stack = []
         count = 0
         mx_count = - float('inf')
         for x in s:
-            print(count)
             if x == '(':
                 stack.append(x)
                 count += 1
