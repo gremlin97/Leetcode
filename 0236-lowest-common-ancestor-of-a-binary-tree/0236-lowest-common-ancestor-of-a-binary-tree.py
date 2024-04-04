@@ -11,6 +11,7 @@ class Solution:
         def lca(r, p, q):
             if not r:
                 return None
+            
             if r == p or r == q:
                 return r
             
