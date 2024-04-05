@@ -4,7 +4,6 @@ class Solution:
         i = 0
         flag = False
         while i < (len(s) - 1):
-            print(s)
             if s[i].lower() == s[i+1].lower() and s[i] != s[i+1]:
                 s.pop(i)
                 s.pop(i)
