@@ -11,8 +11,6 @@ class Solution:
                     stack.pop()
                 else:
                     remove.add(i)
-                    
-        print(stack, remove)
         
         remove.update(stack)
         
