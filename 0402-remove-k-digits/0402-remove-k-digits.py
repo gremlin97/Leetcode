@@ -1,8 +1,6 @@
 class Solution:
     def removeKdigits(self, num: str, k: int) -> str:
         sys.set_int_max_str_digits(50000)
-        if k>=len(num):
-            return "0"
         
         stack = []
         
@@ -14,7 +12,6 @@ class Solution:
         
         res = ''.join(stack)
         res = res[:len(stack)-k]
-        print(res)
         if res:
             return str(int(res))
         return '0'
