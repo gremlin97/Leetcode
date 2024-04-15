@@ -7,7 +7,6 @@
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         res = []
-        
         def trav(r,s):
             if not r.left and not r.right:
                 res.append(s+str(r.val))
@@ -19,7 +18,6 @@ class Solution:
         trav(root,'')
         res = [int(x) for x in res]
         res = sum(res)
-        print(res)
         return res
             
             
