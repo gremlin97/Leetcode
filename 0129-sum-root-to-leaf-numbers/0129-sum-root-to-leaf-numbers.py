@@ -8,12 +8,12 @@ class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         res = []
         def trav(r,s):
+            if not r:
+                return
             if not r.left and not r.right:
                 res.append(s + str(r.val))
-            if r.left:
-                trav(r.left, s + str(r.val))
-            if r.right:
-                trav(r.right, s + str(r.val))
+            trav(r.left, s + str(r.val))
+            trav(r.right, s + str(r.val))
         
         trav(root,'')
         res = [int(x) for x in res]
