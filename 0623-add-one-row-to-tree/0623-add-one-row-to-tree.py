@@ -19,7 +19,6 @@ class Solution:
             
             d -= 1
             if d == 1:
-                print(r.val)
                 temp = r.left
                 r.left = TreeNode(val)
                 r.left.left = temp
