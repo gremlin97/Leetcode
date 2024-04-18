@@ -20,7 +20,6 @@ class Solution:
                 trav(r.right, 0)
         
         trav(root, l=1)
-        print(res)
         return sum(res)
                 
         
