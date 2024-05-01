@@ -1,8 +1,15 @@
 class Solution:
     def minOperations(self, nums: List[int], k: int) -> int:
-        final_xor = 0
+        x = 0
         for n in nums:
-            final_xor = final_xor ^ n
-
-        return bin(final_xor ^ k).count('1')
+            x = x ^ n
+        res = 0
+        while x > 0 or k > 0:
+            if x % 2 != k % 2:
+                res += 1
+            x = x >> 1
+            k = k >> 1
+        
+        return res
+            
         
