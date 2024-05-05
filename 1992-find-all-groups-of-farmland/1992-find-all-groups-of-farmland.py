@@ -5,7 +5,7 @@ class Solution:
             x, y = r, c
             if 0<=r<len(land) and 0<=c<len(land[0]) and land[r][c] == 1:
                 land[r][c] = -1
-                directions = [[-1,0],[0,1],[1,0],[0,-1]]
+                directions = [[0,1],[1,0]]
                 for a, b in directions:
                     xt, yt = dfs(r+a,c+b)
                     x = max(x, xt)
