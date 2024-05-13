@@ -17,10 +17,8 @@ class Solution:
         heap = []
         for i,v in enumerate(score):
             heapq.heappush(heap,(-v, i))
-        print(heap)
         res = [0] * len(score) 
         r = 1
-        # print(heapq.heappop(heap)[1])
         while heap:
             if r == 1:
                 res[heapq.heappop(heap)[1]] = 'Gold Medal'
