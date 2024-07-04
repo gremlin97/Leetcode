@@ -29,6 +29,7 @@ class Solution:
         l3 = ListNode()
         l3.val = s3[0]
         
+        # sum all
         curr = l3
         for i in range(1,len(s3)):
             temp = ListNode()
