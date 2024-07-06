@@ -13,6 +13,8 @@ class Solution:
 
                     for x,y in trav:
                         dfs(r+x, c+y)
+            else:
+                return
 
                         
         for r in range(len(grid)):
