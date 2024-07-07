@@ -24,10 +24,8 @@ class Solution:
                         grid[nr][nc] = 2
                         q.append([nr, nc])
                         org -= 1
-                        print(grid)
+
             res += 1
-        
-        print(res, org, grid)
         
         if org == 0:
             return res
