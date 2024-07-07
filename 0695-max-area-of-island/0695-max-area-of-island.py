@@ -20,8 +20,6 @@ class Solution:
             for c in range(len(grid[0])):
                 if grid[r][c] == 1:
                     res = max(res, dfs(r, c))
-        
-        print(grid)
-        
+
         return res
                     
