@@ -5,23 +5,24 @@
 #         self.next = next
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
-        twin_sum = -float('inf')
-        last = head
         first = head
-        twin_list = []
+        last = head
+        node_vals = []
+        mx = -float('inf')
         
-        while last is not None:
-            twin_list.append(last.val)
+        while last:
+            node_vals.append(last.val)
             last = last.next
         
-        i = len(twin_list) - 1
-        
-        while first is not None:
-            twin_sum = max(twin_sum, (first.val + twin_list[i]))
+        print(node_vals)
+        i = 0
+        while first:
+            mx = max(mx, (first.val + node_vals[len(node_vals)-1-i]))
             first = first.next
-            i -= 1
-        
-        return twin_sum
+            i += 1
+            
+        return mx
+            
         
         
         
