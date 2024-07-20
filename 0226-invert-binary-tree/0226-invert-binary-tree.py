@@ -10,17 +10,13 @@ class Solution:
         def invert(r):
             if not r:
                 return
-            
+            t = r.left
+            r.left = r.right
+            r.right = t
             invert(r.left)
             invert(r.right)
-            
-            temp = r.right
-            r.right = r.left
-            r.left = temp
         
         invert(root)
-        return root    
-            
-                
+        return root
             
         
