@@ -14,7 +14,6 @@ class Solution:
             l = maxHeight(root.left, h+1)
             r = maxHeight(root.right, h+1)
             
-            print(l,r)
             return max(l,r)
         
         return maxHeight(root, 1)
