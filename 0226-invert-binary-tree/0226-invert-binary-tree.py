@@ -10,6 +10,8 @@ class Solution:
         def invert(r):
             if not r:
                 return
+            if not r.left and not r.right:
+                return
             t = r.left
             r.left = r.right
             r.right = t
