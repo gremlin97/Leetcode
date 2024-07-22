@@ -1,27 +1,20 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         res = []
-        subsets = []
+        subset = []
         
-        def dfs(i):
-            # if i>len(nums): #exit condition
-            #     print(check)
-            #     return 
+        def recur(i):
             
             if i == len(nums):
-                res.append(subsets.copy())
+                res.append(subset.copy())
                 return
             
-            subsets.append(nums[i]) #ADD
-            dfs(i+1)
+            subset.append(nums[i])
+            recur(i+1)
             
-            subsets.pop()
-            dfs(i+1)
+            subset.pop()
+            recur(i+1)
         
-        dfs(0)
+        recur(0)
         return res
-            
-            
-                
-            
         
