@@ -1,20 +1,18 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         res = []
-        subset = []
+        subsets = []
         
         def recur(i):
-            
             if i == len(nums):
-                res.append(subset.copy())
+                res.append(subsets.copy())
                 return
             
-            subset.append(nums[i])
+            subsets.append(nums[i])
             recur(i+1)
             
-            subset.pop()
+            subsets.pop()
             recur(i+1)
         
         recur(0)
         return res
-        
