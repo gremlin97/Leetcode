@@ -3,38 +3,34 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
+        d = [[0,1],[0,-1],[1,0],[-1,0]]
         
-        def fill(r,c):
-            if r>len(board)-1 or c>len(board[0])-1 or r<0 or c<0 or board[r][c] == "O" or board[r][c] == "X":
+        def dfs(r, c):
+            # print(r,c)
+            if 0<=r<=(len(board)-1) and 0<=c<=(len(board[0])-1) and board[r][c] == 'O':
+                board[r][c] = '-'
+                for a,b in d:
+                    dfs(r+a, c+b)
+            else:
                 return
             
-            board[r][c] = "O"
-            
-            directions = [[1,0],[-1,0],[0,1],[0,-1]]
-            
-            for a,b in directions:
-                fill(r+a, c+b)
-                
-        for r in range(len(board)): 
-            for c in range(len(board[0])):
-                if board[r][c] == "O":
-                    board[r][c] = "-"
-        
-        for x in range(len(board[0])):
-            fill(0,x)
-            fill(len(board)-1,x)
-                  
-        for x in range(1, len(board)-1):
-            fill(x,0)
-            fill(x,len(board[0])-1)
-        
         for r in range(len(board)):
             for c in range(len(board[0])):
-                if board[r][c] == "-":
-                    board[r][c] = "X"
-            
-        return board
-            
-            
+                if (board[r][c] == 'O') and (r in (0,len(board)-1) or c in (0, len(board[0])-1)):
+                    print(r,c)
+                    dfs(r,c)
+                    
+        # print(board)
+        for r in range(len(board)):
+            for c in range(len(board[0])):
+                if board[r][c] == '-':
+                    board[r][c] = 'O'
+                    continue
+                if board[r][c] == 'O':
+                    board[r][c] = 'X'
                 
+    
                 
+        
+        
+        
