@@ -17,7 +17,7 @@ class Solution:
         for r in range(len(board)):
             for c in range(len(board[0])):
                 if (board[r][c] == 'O') and (r in (0,len(board)-1) or c in (0, len(board[0])-1)):
-                    print(r,c)
+                    # print(r,c)
                     dfs(r,c)
                     
         # print(board)
