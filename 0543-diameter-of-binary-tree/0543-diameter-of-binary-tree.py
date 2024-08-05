@@ -15,6 +15,7 @@ class Solution:
         def diameter(r):
             if not r:
                 return 0
+            
             hl = height(r.left)
             hr = height(r.right)
             
