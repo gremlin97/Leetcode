@@ -1,38 +1,32 @@
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
+        rows = len(board)
+        cols = len(board[0])
+        d = [[0,1],[0,-1],[1,0],[-1,0]]
         visited = set()
-        def dfs(x,y,w):
-            if w[0] != board[x][y]:
-                return False
         
-            if len(w) == 1:
-                # print('Final Letter is:',w[0])
+        def dfs(r, c, i):
+            if i == len(word):
                 return True
             
-            visited.add((x,y))
+            if (r>rows-1 or r<0 or c<0 or c>cols-1 or ((r,c) in visited)):
+                return False
             
-            # print(visited)
-            # print(board[x][y])
-            # print("Word",w)
+            if board[r][c] != word[i]:
+                return False
+            
+            visited.add((r,c))
+            res = False
+            for a, b in d:
+                res = res or dfs(r+a, c+b, i+1)
+            visited.remove((r,c))
+            return res
         
-            dr = [[0,1],[0,-1],[1,0],[-1,0]]
-            for d in dr:
-                new_x = x + d[0] 
-                new_y = y + d[1]
-                
-                o_r = False
-                if 0 <= new_x < len(board) and 0 <= new_y < len(board[0]) and (new_x,new_y) not in visited:
-                    if dfs(new_x, new_y, w[1:]):
-                        # print('Here')
-                        return True
-            visited.remove((x,y))
-
-        for i in range(len(board)):
-            for j in range(len(board[0])):
-                if dfs(i,j,word):
-                    return True
-                visited.clear()
+        for r in range(rows):
+            for c in range(cols):
+                if dfs(r,c,0): return True
+        
         return False
-
+            
             
         
