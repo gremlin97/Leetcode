@@ -5,20 +5,21 @@ class Solution:
         nums.sort()
         
         def recur(i):
-            # print(res, curr)
             if i == len(nums):
-                res.append(curr[::])
+                res.append(curr.copy())
                 return
             
             curr.append(nums[i])
             recur(i+1)
+            
             curr.pop()
             
             while i<len(nums)-1 and nums[i] == nums[i+1]:
-                i += 1
-                
+                i+=1
             recur(i+1)
         
         recur(0)
-        # print(res)
         return res
+            
+            
+            
