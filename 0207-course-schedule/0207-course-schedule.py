@@ -2,8 +2,8 @@ class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         d = {i:[] for i in range(numCourses)}
         
-        for pre, course in prerequisites:
-            d[pre].append(course)
+        for course, pre in prerequisites:
+            d[course].append(pre)
         
         visited = set()
         def dfs(i):
