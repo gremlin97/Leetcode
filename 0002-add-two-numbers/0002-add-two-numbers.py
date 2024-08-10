@@ -22,14 +22,13 @@ class Solution:
         s2 = s2[::-1]
             
         s3 = str(int(s1) + int(s2))
-        print(s3)
-        
         s3 = list(s3)
+        s3 = s3[::-1]
         
-        head = ListNode(int(s3[len(s3)-1]))
+        head = ListNode(int(s3[0]))
         curr = head
         
-        for i in range(len(s3)-2,-1,-1):
+        for i in range(1, len(s3)):
             curr.next = ListNode(int(s3[i]))
             curr = curr.next
         
