@@ -22,8 +22,6 @@ class Solution:
             slow = slow.next
             fast = fast.next
         
-        print(slow.val, fast.val)
-        
         slow.next = slow.next.next
         return dummy.next
         
