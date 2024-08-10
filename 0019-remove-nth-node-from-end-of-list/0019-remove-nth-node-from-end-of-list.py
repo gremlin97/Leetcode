@@ -5,9 +5,6 @@
 #         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        # if not head.next:
-        #     return None
-        
         dummy = ListNode()
         dummy.next = head
         
