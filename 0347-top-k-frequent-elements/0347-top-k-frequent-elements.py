@@ -1,25 +1,12 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        res = []
-        
-        hashmap = {}
-        
+        d = {}
         for x in nums:
-            if x in hashmap:
-                hashmap[x] += 1
+            if not x in d:
+                d[x] = 1
             else:
-                hashmap[x] = 1
-            
-        _hashmap = {k:v for k,v in sorted(hashmap.items(), key = lambda x : x[1], reverse = True)}
-        
-        _hashmap = [k for k,v in _hashmap.items()]
-        
-        for i in range(0, k):
-            res.append(_hashmap[i])
-        
-        return res
-
-        
-            
-            
+                d[x] += 1
+                
+        d = dict(sorted(d.items(), key = lambda x:x[1], reverse = True))
+        return list(d.keys())[:k]
         
