@@ -3,3 +3,4 @@ class Solution:
         if Counter(s) == Counter(t):
             return True
         return False
+        
