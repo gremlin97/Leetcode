@@ -1,19 +1,24 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        hashmap = {')':'(','}':'{',']':'['}
-        
-        stack = []
+        st = []
+        d = {'(':')','[':']','{':'}'}
+        if ')' in d:
+            print('Yes')
         
         for x in s:
-            if x not in hashmap:
-                stack.append(x)
-            else:
-                if stack and stack[-1] == hashmap[x]:
-                        stack.pop()
+            if x in d:
+                st.append(x)
+            elif (x not in d) and st:
+                print('Inside')
+                if d[st[-1]] == x:
+                    st.pop()
                 else:
                     return False
-        
-        if stack:
+            else:
+                return False
+        print('Here')
+        if st:
             return False
         return True
+            
         
