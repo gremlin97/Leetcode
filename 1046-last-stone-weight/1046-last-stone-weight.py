@@ -6,14 +6,9 @@ class Solution:
         while len(heap)>1:
             f = heapq.heappop(heap)
             s = heapq.heappop(heap)
-            
-            if f>s:
-                left = s - f
-                print(f,s,left)
-                heapq.heappush(heap, left)
-            else:
-                left = f - s
-                heapq.heappush(heap, left)
+            f-s
+            if s>f:
+                heapq.heappush(heap, f - s)
         
         if heap:
             return abs(heap[0])
