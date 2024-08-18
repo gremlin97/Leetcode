@@ -1,11 +1,12 @@
 class Solution:
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
+        last = -1
         intervals.sort(key = lambda x:x[1])
-        last_end = -float('inf')
         for s,e in intervals:
-            if s >= last_end:
-                last_end = e
+            if s>=last:
+                last = e
             else:
                 return False
         return True
+            
         
