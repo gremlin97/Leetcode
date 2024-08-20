@@ -4,10 +4,8 @@ class Solution:
         for x in nums:
             if jump < 0:
                 return False
-            else:
-                if jump < x:
-                    jump = x
+            elif jump < x:
+                jump = x
             jump -= 1
-            
         return True
         
