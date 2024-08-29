@@ -1,15 +1,9 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        memo = {0:nums[0]}
+        memo = {-1:0, 0:nums[0]}
         
-        def r(i):
-            if i<0:
-                return 0
-            elif i in memo:
-                return memo[i]
-            else:
-                memo[i] = max(nums[i]+r(i-2), r(i-1))
-                return memo[i]
-            
-        return r(len(nums)-1)
+        for i in range(1, len(nums)):
+            memo[i] = max(memo[i-1], memo[i-2] + nums[i])
+        
+        return memo[len(nums)-1]
         
