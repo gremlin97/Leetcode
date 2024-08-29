@@ -1,6 +1,6 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        memo = {0:nums[0]}
+        memo = {}
         
         def r(i):
             if i<0:
