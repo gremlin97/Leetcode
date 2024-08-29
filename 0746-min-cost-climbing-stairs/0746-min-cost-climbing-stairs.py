@@ -1,8 +1,10 @@
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
-        @lru_cache(None)
+        memo = {0:cost[0], 1:cost[1]}
         def minCost(n):
-            if n<2:
-                return cost[n]
-            return min(minCost(n-1), minCost(n-2)) + cost[n]
+            if n in memo:
+                return memo[n]
+            memo[n] = min(minCost(n-1), minCost(n-2)) + cost[n]
+            return memo[n]
+        
         return min(minCost(len(cost)-1), minCost(len(cost)-2)) 
