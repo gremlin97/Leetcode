@@ -22,7 +22,6 @@ class Solution:
         
         while prod:
             dig = prod%10
-            # print('Digit',dig)
             res = res + chr(dig + 48)
             prod = prod//10
         
