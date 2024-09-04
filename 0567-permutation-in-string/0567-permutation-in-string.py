@@ -4,17 +4,28 @@ class Solution:
             return False
         
         d1 = Counter(s1)
-        l = len(s1)
+        k = len(s1)
+        d2 = Counter(s2[:k])
         
-        #abc - dcda -> len(s2) - l = 4-3 = 1
-        for i in range(len(s2)-l+1):
-            # print(i+1, len(s2)-1)
-            sub = s2[i:i+l]
-            # print(sub)
-            d2 = Counter(sub)
+        if d1 == d2:
+            return True
+
+        l = 0
+        for r in range(k, len(s2)):
             
+            if d2[s2[l]] == 1:
+                del d2[s2[l]]
+            else:
+                d2[s2[l]] -= 1
+            
+            if s2[r] in d2:
+                d2[s2[r]] += 1
+            else:
+                d2[s2[r]] = 1
+    
             if d1 == d2:
                 return True
+            l+=1
         
         return False
     
