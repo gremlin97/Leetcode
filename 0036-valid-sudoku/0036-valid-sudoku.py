@@ -22,8 +22,8 @@ class Solution:
                     s.add(board[j][i])
         
         
-        for k in range(0,9,3):
-            for l in range(0,9,3):
+        for k in range(0,7,3):
+            for l in range(0,7,3):
                 s.clear()
                 for i in range(3):
                     for j in range(3):
