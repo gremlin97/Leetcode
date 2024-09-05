@@ -11,6 +11,7 @@ class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
         if not node:
             return None
+        
         d = {}
         
         def clone(n):
@@ -18,7 +19,6 @@ class Solution:
                 curr = Node(n.val)
                 d[n.val] = curr
 
-                print(n.val)
                 if n.neighbors:
                     for x in n.neighbors:
                         curr.neighbors.append(clone(x))
