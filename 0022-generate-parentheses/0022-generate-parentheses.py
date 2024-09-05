@@ -1,22 +1,22 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        stack = []
         res = []
+        curr = []
         
-        def recur(c, o):
-            if c == o == n:
-                res.append(''.join(stack))
+        def recur(o, c):
+            if o == c == n:
+                res.append(''.join(curr))
                 return
             
             if o<n:
-                stack.append('(')
-                recur(c,o+1)
-                stack.pop()
+                curr.append('(')
+                recur(o+1, c)
+                curr.pop()
             
             if c<o:
-                stack.append(')')
-                recur(c+1,o)
-                stack.pop()
-                
+                curr.append(')')
+                recur(o, c+1)
+                curr.pop()
+        
         recur(0,0)
         return res
