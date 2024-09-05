@@ -19,10 +19,6 @@ class Solution:
                 return True
             
         i = 1
-        
-        # for i in range(1,max(piles)+1):
-        #     if doSim(i):
-        #         return i
         min_res = float('inf')
         l, r = 1, max(piles)
         while l<=r:
