@@ -6,7 +6,7 @@ class Solution:
         def recur(c, o, stack):
             if c == o == n:
                 res.append(''.join(stack))
-                return 
+                return res
             
             if o<n:
                 stack.append('(')
