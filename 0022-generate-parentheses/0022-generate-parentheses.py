@@ -3,21 +3,21 @@ class Solution:
         stack = []
         res = []
         
-        def recur(c, o):
+        def recur(c, o, stack):
             if c == o == n:
                 res.append(''.join(stack))
-                return
+                return 
             
             if o<n:
                 stack.append('(')
-                recur(c,o+1)
+                recur(c,o+1, stack)
                 stack.pop()
             
             if c<o:
                 stack.append(')')
-                recur(c+1,o)
+                recur(c+1,o, stack)
                 stack.pop()
                 
-        recur(0,0)
+        recur(0,0,stack)
         return res
         
