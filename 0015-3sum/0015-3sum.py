@@ -3,29 +3,25 @@ class Solution:
         nums.sort()
         res = []
         
-        i = 0
-        while i < len(nums):
+        for i in range(len(nums)):
             if i>0 and nums[i] == nums[i-1]:
-                i+=1
                 continue
-            anchor = nums[i]
-            diff = -nums[i]
+                
+            target = -nums[i]
+            
             l, r = i+1, len(nums)-1
             
             while l<r:
-                if nums[l] + nums[r] > diff:
-                    r-=1
-                elif nums[l] + nums[r] < diff:
+                if nums[l] + nums[r] == target:
+                    res.append([nums[i], nums[l], nums[r]])
                     l+=1
-                else:
-                    res.append([anchor, nums[l], nums[r]])
-                    l+=1
-                    while nums[l] == nums[l-1] and l<r:
+                    while nums[l-1] == nums[l] and l<r:
                         l+=1
-                        
                     
-            i+=1
-        return res                            
-                    
-                    
+                elif nums[l] + nums[r] > target:
+                    r -= 1
+                else:
+                    l += 1
+        
+        return res
         
