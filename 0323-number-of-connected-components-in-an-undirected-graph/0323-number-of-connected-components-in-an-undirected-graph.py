@@ -13,11 +13,9 @@ class Solution:
         print(adj)
         
         def dfs(n):
-            #print('Visited', visited)
             if n not in visited:
                 visited.add(n)
             
-            # if n in adj and adj[n] != []:
                 for x in adj[n]:
                     dfs(x)
             return 
@@ -25,7 +23,6 @@ class Solution:
         
         for k in adj.keys():
             if k not in visited:
-                #print(k)
                 dfs(k)
                 res += 1
         
