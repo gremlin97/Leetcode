@@ -10,7 +10,7 @@ class Solution:
         for c,p in prerequisites:
             adj[c].append(p)
         
-        print(adj)
+        # print(adj)
         
         unvisited, visiting, visited = 0, 1, 2
                 
