@@ -20,8 +20,8 @@ class Solution:
                 for n2,w2 in adj[n1]:
                     if n2 not in visited:
                         heapq.heappush(q,(w1+w2, n2))
-            else:
-                continue
+            # else:
+            #     continue
         
         print(visited, n)
         if len(visited) == n:
