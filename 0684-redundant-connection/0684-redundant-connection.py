@@ -3,7 +3,6 @@ class Solution:
         n = max(sum(edges, []))
         parent = [i for i in range(n)]
         rank = [1 for i in range(n)]
-        print(n, parent, rank)
         
         def find(x):
             if parent[x] == x:
