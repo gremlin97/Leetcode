@@ -10,16 +10,15 @@ class Solution:
         
         while q:
             size = len(q)
-            for _ in range(size):
-                w1, n1 = heapq.heappop(q)
+            w1, n1 = heapq.heappop(q)
 
-                if n1 not in visited:
-                    visited.add(n1)
-                    t = max(t,w1)
+            if n1 not in visited:
+                visited.add(n1)
+                t = max(t,w1)
 
-                    for n2,w2 in adj[n1]:
-                        if n2 not in visited:
-                            heapq.heappush(q,(w1+w2, n2))
+                for n2,w2 in adj[n1]:
+                    if n2 not in visited:
+                        heapq.heappush(q,(w1+w2, n2))
 
         print(visited, n)
         if len(visited) == n:
