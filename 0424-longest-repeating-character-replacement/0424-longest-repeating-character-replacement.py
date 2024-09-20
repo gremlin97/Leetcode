@@ -1,24 +1,21 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        l, count = 0, {}
+        l = 0
+        d = {}
         res = 0
-        
         for r in range(len(s)):
-            if s[r] not in count:
-                count[s[r]] = 1
+
+            if s[r] not in d:
+                d[s[r]] = 1
             else:
-                count[s[r]] += 1
+                d[s[r]] += 1
             
-            #abcd l = 0, r = 3,  r-l+1
-            diff = (r-l+1) - max(count.values())
-            if diff > k:
-                count[s[l]] -= 1
-                l+=1
+            if (r-l+1) - max(list(d.values())) > k:
+                d[s[l]] -= 1
+                l += 1
             else:
-                res = max(res, (r-l+1))
-        
+                res = max(res, r-l+1)
+            # print(s[l:r+1], res)
         return res
                 
-            
-        
         
