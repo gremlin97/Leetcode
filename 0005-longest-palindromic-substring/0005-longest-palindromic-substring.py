@@ -23,7 +23,7 @@ class Solution:
                 return mem[i][j]          
         
         for i in range(len(s)):
-            for j in range(len(s)-1,i-1,-1):
+            for j in range(i, len(s)):
                 if recur(i,j) and j-i+1 > max_len:
                     max_len = j-i+1
                     res = s[i:j+1]
