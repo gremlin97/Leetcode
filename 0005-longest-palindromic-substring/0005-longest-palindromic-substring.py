@@ -3,11 +3,11 @@ class Solution:
         max_len = 0
         res = ''
         
-        mem = {}
+        # mem = {}
         mem = []
         for i in range(len(s)):
             mem.append([-1] * len(s))
-        @lru_cache()
+        # @lru_cache()
         def recur(i,j):
             if i>=j:
                 return True
