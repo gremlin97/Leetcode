@@ -9,7 +9,8 @@ class Solution:
             mem.append([-1] * len(s))
             
         def recur(i,j):
-            if i>=j:
+            # print(i,j)
+            if i-j==1 or i-j==0:
                 return True
             
             elif mem[i][j]!= -1:
