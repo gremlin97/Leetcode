@@ -10,11 +10,11 @@ class Solution:
         def depth(r):
             if not r:
                 return 0
-            
             l = depth(r.left) + 1
             r = depth(r.right) + 1
             
-            return max(l, r)
+            return max(l,r)
         
         return depth(root)
+            
         
