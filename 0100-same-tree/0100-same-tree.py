@@ -7,18 +7,23 @@
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         
-        def same(p,q):
+        
+        def recur(p,q):
             
             if not p and not q:
                 return True
             
-            if not p or not q:
+            if p and not q:
                 return False
             
-            if p.val  == q.val:
-                return same(p.left, q.left) and same(p.right, q.right)
+            if not p and q:
+                return False
             
-            return False
-        
-        return same(p, q)
-        
+            if p.val == q.val:
+                return recur(p.left, q.left) and recur(p.right, q.right)
+            else:
+                return False
+                
+        return recur(p, q)
+            
+            
