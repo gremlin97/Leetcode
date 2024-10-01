@@ -9,14 +9,13 @@ class Solution:
         
         def recur(r):
             if not r:
-                return
+                return 
+            
             
             r.left, r.right = r.right, r.left
             
             recur(r.left)
             recur(r.right)
-        
+            
         recur(root)
         return root
-            
-        
