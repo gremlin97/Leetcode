@@ -7,7 +7,6 @@
 class Solution:
     res = 0
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        
         def recur(r):
             if not r:
                 return 0
@@ -15,12 +14,9 @@ class Solution:
             l = recur(r.left) + 1
             r = recur(r.right) + 1
             
-            # print(l,r)
-            
             self.res = max(self.res, l + r - 2)
             
-            return max(l,r)
+            return max(l, r)
         
         recur(root)
         return self.res
-        
