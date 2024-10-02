@@ -8,22 +8,18 @@ class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         isBalanced = True
         def recur(r):
+            nonlocal isBalanced
+            
             if not r:
                 return 0
             
-            l = recur(r.left) + 1
-            r = recur(r.right) + 1
+            le = recur(r.left) + 1
+            ri = recur(r.right) + 1
             
-            if abs(l-r)>1:
-                self.isBalanced = False
+            if abs(le-ri)>1: isBalanced = False
             
-            return max(l,r)
+            return max(le,ri)
         
         recur(root)
-        return self.isBalanced
-        
-    
-            
-            
-            
+        return isBalanced
         
