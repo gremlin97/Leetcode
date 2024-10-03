@@ -5,9 +5,7 @@ class Solution:
         m = float('inf')
         for x in strs:
             m = min(len(x),m)
-            
-        print(m)
-            
+
         for i in range(m):
             curr = strs[0][i]
             for j in range(len(strs)):
