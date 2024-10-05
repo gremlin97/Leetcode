@@ -1,29 +1,29 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        subsets = []
+        
         res = []
+        subs = []
         
-        def recur(i, t):
-            #print(subsets, res)
-            if i == len(candidates):
-                if t == target:
-                    res.append(subsets.copy())
+        def recur(i, s):
+            if s == 0:
+                res.append(subs[::])
                 return
             
-            if t>target:
+            elif s < 0:
                 return
             
-            subsets.append(candidates[i])
-            t += candidates[i]
-            recur(i, t)
+            elif i == len(candidates):
+                return 
             
-            subsets.pop()
-            t -= candidates[i]
-            recur(i+1, t)
+            subs.append(candidates[i])
+            s -= candidates[i]
+            recur(i, s)
+            
+            subs.pop()
+            s += candidates[i]
+            recur(i+1, s)
+            
+            return
         
-        recur(0, 0)
-        print(res)
+        recur(0,target)
         return res
-            
-            
-        
