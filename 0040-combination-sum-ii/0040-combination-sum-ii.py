@@ -1,32 +1,32 @@
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
-        curr = []
-        candidates.sort( )
+        subs = []
+        candidates.sort()
         
-        def recur(i, t):
-            # print(res, curr, target, t)
-            if i == len(candidates):
-                if t == target:
-                    res.append(curr[::])
+        def recur(i, s):
+            
+            if s == 0:
+                res.append(subs[::])
                 return
             
-            if t>target:
-                return
+            elif i == len(candidates) or s < 0:
+                return 
             
-            curr.append(candidates[i])
-            t += candidates[i]
-            recur(i+1, t)
-            curr.pop()
-            t -= candidates[i]
+            subs.append(candidates[i])
+            s -= candidates[i]
+            recur(i+1, s)
             
-            while i<len(candidates)-1 and candidates[i] == candidates[i+1]:
-                i+=1
-            recur(i+1, t)
+            subs.pop()
+          
+            
+            while i<len(candidates) - 1 and candidates[i] == candidates[i+1]:
+                i += 1
+            
+            s +=  candidates[i]
+            recur(i+1, s)
+            
+            return
         
-        recur(0, 0)
+        recur(0, target)
         return res
-            
-        
-
-        
