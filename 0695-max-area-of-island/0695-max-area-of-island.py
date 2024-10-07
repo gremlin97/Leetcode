@@ -3,8 +3,6 @@ class Solution:
         rows = len(grid)
         cols = len(grid[0])
         
-        d = [[0,1],[0,-1],[1,0],[-1,0]]
-        
         res = 0
         
         def dfs(r,c):
@@ -12,10 +10,7 @@ class Solution:
             if 0<=r<len(grid) and 0<=c<len(grid[0]) and grid[r][c] == 1:
                 grid[r][c] = -1
                 
-                for a, b in d:
-                    curr += dfs(r+a, c+b)
-                
-                return 1 + curr
+                return 1 + dfs(r+1,c) + dfs(r-1,c) + dfs(r,c+1) + dfs(r,c-1) 
             else:
                 return 0
             
