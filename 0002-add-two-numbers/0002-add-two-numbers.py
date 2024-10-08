@@ -25,12 +25,12 @@ class Solution:
         add = str(int(n1) + int(n2))
         add = add[::-1]
         
-        res = ListNode(add[0])
-        head = res
+        first = ListNode(add[0])
+        res = first
         for x in add[1:]:
-            res.next = ListNode(int(x))
-            res = res.next
-        return head
+            first.next = ListNode(int(x))
+            first = first.next
+        return res
             
             
         
