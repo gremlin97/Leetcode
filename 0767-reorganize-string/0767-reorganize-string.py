@@ -2,7 +2,8 @@ class Solution:
     def reorganizeString(self, s: str) -> str:
         d = Counter(s)
         
-        heap = [[-v,k] for k,v in d.items()]
+        heap = [(-v,k) for k,v in d.items()]
+        
         heapq.heapify(heap)
         alt = None
         res = ''
@@ -15,7 +16,7 @@ class Solution:
 
                 if alt:
                     heapq.heappush(heap, alt) 
-                alt = [c,k]
+                alt = (c,k)
 
         if len(s) != len(res): return ''
         else: return res
