@@ -12,11 +12,9 @@ class Solution:
             nonlocal res
             if not r:
                 return 
-            
-            # print(curr)
+    
             curr.append(r.val)
             if sum(curr) == targetSum:
-                # trav.append(curr[::])
                 res += 1
             
             temp = curr[::]
@@ -27,19 +25,13 @@ class Solution:
         def t(r):
             if not r:
                 return
-            
-            # print(r.val)
+
             dfs(r, [])
             t(r.left)
             t(r.right)
             
         t(root)
         
-        # print(trav)
-        # print(trav)
-        # for x in trav:
-        #     if sum(x) == targetSum:
-        #         res += 1
         return res
             
             
