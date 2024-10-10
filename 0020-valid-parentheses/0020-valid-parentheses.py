@@ -12,7 +12,6 @@ class Solution:
                 else:
                     return False
         
-        print(stack)
         if not stack:
             return True
         else: return False
