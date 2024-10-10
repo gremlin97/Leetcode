@@ -8,5 +8,4 @@ class Solution:
             for j in range(len(nums)):
                 if nums[i] < nums[j]:
                     nums[i], nums[j] = nums[j], nums[i]
-        print(nums)
         
