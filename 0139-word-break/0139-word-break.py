@@ -18,9 +18,13 @@ class Solution:
                     if build(e+1):
                         memo[i] = True
                         return True
+            
             memo[i] = False
+            return memo[i]
+            
         
         return build(0)
+    
                     
                     
                 
