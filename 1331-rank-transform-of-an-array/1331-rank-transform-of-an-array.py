@@ -15,7 +15,6 @@ class Solution:
             prev = x    
             d[x] = rank
         
-        print(d)
         res = []
         
         for x in arr:
