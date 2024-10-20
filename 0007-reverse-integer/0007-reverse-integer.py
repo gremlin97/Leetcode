@@ -15,10 +15,11 @@ class Solution:
             num = num//10
             res = res + d*(10**(size))
             size -= 1
+            if res > (2**31)-1 or res < -(2**31): return 0
             
             #print(num, d, res)
         
-        if res > (2**31)-1 or res < -(2**31): return 0
+        
         if neg:
             return res*-1
         
