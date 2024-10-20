@@ -1,20 +1,27 @@
 class Solution:
     def reverse(self, x: int) -> int:
-        res = 0 
-        s = list(str(x))
+        num = x
+        res = 0
         neg = False
-        
-        if x<0:
-            s = s[1:]
+        size = len(str(x))-1
+        if x < 0: 
+            size -= 1
+            num *= -1
             neg = True
             
-        s.reverse()
+        while num:
+            # 123%10 = 3, num//10
+            d = num%10
+            num = num//10
+            res = res + d*(10**(size))
+            size -= 1
+            
+            #print(num, d, res)
         
-        s = ''.join(s)
-        s = int(s)
-        
+        if res > (2**31)-1 or res < -(2**31): return 0
         if neg:
-            s *= -1
-        if s < -(2**(31)) or s > (2**31)-1: return 0
-        return s
+            return res*-1
+        
+        return res
+            
         
