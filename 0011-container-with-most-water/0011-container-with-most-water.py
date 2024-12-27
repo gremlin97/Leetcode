@@ -3,7 +3,7 @@ class Solution:
         mx_area = 0
         l, r = 0, len(height) - 1
         while l<r:
-            print(l, r, height[l], height[r])
+            # print(l, r, height[l], height[r])
             curr_area = (r-l) * min(height[l], height[r])
             mx_area = max(curr_area, mx_area)
             if height[l]<height[r]:
