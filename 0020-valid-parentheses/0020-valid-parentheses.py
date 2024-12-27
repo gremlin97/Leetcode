@@ -13,7 +13,7 @@ class Solution:
                 if d[x] == top:
                     stack.pop()
                 else:
-                    stack.append(x)
+                    return False
         
         if not stack:
             return True
